@@ -42,6 +42,20 @@ const router = createRouter({
   ]
 })
 
+Router Link 
+
+Os router links são componentes que repsentam sua rota em forma de link 
+na prop to ele recebe o link da rota e na parte visual você define qual eo texto 
+que vai representar sua rota 
+
+ <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/teste">Teste</RouterLink> <- minha rota teste 
+  </nav>
+
+  
+
 
 
 
