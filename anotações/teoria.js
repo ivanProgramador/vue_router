@@ -54,7 +54,18 @@ que vai representar sua rota
         <RouterLink to="/teste">Teste</RouterLink> <- minha rota teste 
   </nav>
 
-  
+Link com parametros
+
+Para passar um parametro em uma link para selecionar um item especifico 
+
+{
+      path: '/teste/:id',
+      name: 'home',
+      component: HomeView
+ }
+
+
+
 
 
 
