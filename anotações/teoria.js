@@ -64,6 +64,64 @@ Para passar um parametro em uma link para selecionar um item especifico
       component: HomeView
  }
 
+ Links dinamicos são necessarios quando um página precisa de parametros para exibir 
+ por exeplo uma pagina de edição de cadastro ou uma rotra adiministrativa que precisa
+ validar o usuario antes do acesso.
+ 
+ a sequencia começa dentro do componente pai qua usa o componete router link para apontar
+ para a rota aqui eu faço um bind dentro da prop to que recebe um objeto name eo nome da rota 
+ e dado eu parametro qua essa rota vai receber 
+
+   <RouterLink :to="{name:'cadastro',params:{dado:'dado teste'}}">Teste</RouterLink>
+
+Agora eu tenho que preparar a estrutura da rota para receber esse parametro, nesse 
+caso ela funciona como um rota express basta colocar uuma barra eo nome do parametro  
+
+ {
+      path: '/teste/:dado',
+      name: 'cadastro',
+      component: Cadastro
+ }
+
+tratando o parametro dentro do componente cadastro no componete cadastro eu estou openas atribuindo um variavel a ele
+e mostrando ele na tela mas da para fazer outras coisas ou receber mais dados visto que o parame tro é um objeto eu possa receber ate 
+um cadastro completo 
+
+
+
+<template>
+    <div>
+      <input type="text" name="email" id="email" placeholder="E-mail"/>
+      <input type="text" name="nome" id="nome" placeholder="nome"/>
+      <h2>{{ parametroRecebido }}</h2>
+      <button>Teste !!!</button>
+    </div>
+</template>
+
+<script>
+ export default {
+    created(){
+    this.parametroRecebido = this.$route.params.dado;
+    
+    },
+    data(){
+       return{
+          parametroRecebido:''
+       }
+    }
+   
+ }
+
+</script>
+
+
+
+
+
+
+
+
+
 
 
 

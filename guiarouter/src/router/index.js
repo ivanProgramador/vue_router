@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/teste',
+      path: '/teste/:dado',
       name: 'cadastro',
       component: Cadastro
     },
