@@ -4,18 +4,19 @@
       <input type="text" name="nome" id="nome" placeholder="nome"/>
       <h2>{{ parametroRecebido }}</h2>
       <button>Teste !!!</button>
+      <router-view/>
     </div>
 </template>
 
 <script>
  export default {
     created(){
-    this.parametroRecebido = this.$route.params.dado;
+   /// this.parametroRecebido = this.$route.params.dado;
     
     },
     data(){
        return{
-          parametroRecebido:''
+      //    parametroRecebido:''
        }
     }
    

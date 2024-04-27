@@ -115,6 +115,32 @@ um cadastro completo
 </script>
 
 
+Nested Router ou rota aninhada  se trata de uma rota filha da rota principal
+no caso abaixo eu declarei a rota cadastro que pode ser acessada pelo url  '/teste/:dado'
+só que essa rota tem um array chamdos children que guarda as rotas filhas dela.
+
+por exemplo a rota principal pode levar a um componente de cadastro e a rota filha leva para o cadastro
+de pessoas ou podem ser outros tipos de cadastros.   
+
+  {
+      path: '/teste',
+      name: 'cadastro',
+      component: Cadastro,
+       children:[
+         {
+           path:'pessoas',
+           name:'pessoas',
+           component:Pessoas-component
+         }
+       ]
+    }
+
+Rotas filhas não tem a barra, quando ser acessa /teste ele vai mostrar o componete de cadastro 
+agora quanse acessa /teste/pessoas vai mostrar o componete cadastro mais o componete pessoas incluso na view 
+
+
+
+
 
 
 

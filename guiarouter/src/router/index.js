@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Cadastro from "../views/Cadastro-component.vue"
+import Pessoas from  "../views/Pessoas-component.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +12,16 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/teste/:dado',
+      path: '/teste',
       name: 'cadastro',
-      component: Cadastro
+      component: Cadastro,
+       children:[
+         {
+           path:'pessoas',
+           name:'pessoas',
+           component:Pessoas
+         }
+       ]
     },
     {
       path: '/about',
